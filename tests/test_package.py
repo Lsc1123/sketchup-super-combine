@@ -34,6 +34,7 @@ class PackageTests(unittest.TestCase):
             self.assertEqual(expected, sorted(z.namelist()))
             self.assertEqual(6, len(expected))
             for name in z.namelist():
+                self.assertEqual(3, z.getinfo(name).create_system)
                 self.assertFalse(name.startswith('/'))
                 self.assertNotIn('..', name.split('/'))
                 self.assertNotIn('\\', name)
