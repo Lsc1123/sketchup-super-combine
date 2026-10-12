@@ -1,0 +1,10 @@
+.DS_Store
+.dev/
+dist/
+test-results/
+__pycache__/
+*.pyc
+*.skb
+*.log
+tests/*report.json
+tests/verification-summary.json

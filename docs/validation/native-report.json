@@ -1,0 +1,73 @@
+{
+  "sketchup": "26.0.428",
+  "results": [
+    {
+      "name": "overlap_union",
+      "pass": true
+    },
+    {
+      "name": "disjoint_solids",
+      "pass": true
+    },
+    {
+      "name": "coplanar_shared_face",
+      "pass": true
+    },
+    {
+      "name": "nested_transformed_components_and_external_instance",
+      "pass": true
+    },
+    {
+      "name": "missing_planar_face",
+      "pass": true
+    },
+    {
+      "name": "stray_edge",
+      "pass": true
+    },
+    {
+      "name": "through_hole",
+      "pass": true
+    },
+    {
+      "name": "sealed_cavity",
+      "pass": true
+    },
+    {
+      "name": "cavity_with_inner_island",
+      "pass": true
+    },
+    {
+      "name": "cavity_partly_filled",
+      "pass": true
+    },
+    {
+      "name": "two_overlapping_cavities",
+      "pass": true
+    },
+    {
+      "name": "internal_partition",
+      "pass": true
+    },
+    {
+      "name": "faces_split_into_nested_groups",
+      "pass": true
+    },
+    {
+      "name": "cavity_with_through_hole_and_material",
+      "pass": true
+    },
+    {
+      "name": "duplicate_identical_solids",
+      "pass": true
+    },
+    {
+      "name": "rollback_unrepairable",
+      "pass": true
+    },
+    {
+      "name": "locked_rollback",
+      "pass": true
+    }
+  ]
+}

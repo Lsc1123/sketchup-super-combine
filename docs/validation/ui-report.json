@@ -1,0 +1,19 @@
+{
+  "name": "installed_menu_action",
+  "pass": true,
+  "engine": [
+    "<SketchUp Plugins>/lsc_super_combine/engine.rb",
+    150
+  ],
+  "toolbar_visible": true,
+  "toolbar_last_state": 1,
+  "report": {
+    "inputs": 2,
+    "solids": 2,
+    "repaired_faces": 0,
+    "internal_faces": 0,
+    "stray_edges": 0,
+    "volume_m3": 0.024580596,
+    "faces": 6
+  }
+}

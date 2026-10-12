@@ -1,0 +1,37 @@
+name: Test and package
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    name: Test and package (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check Ruby syntax
+        run: ruby tools/check_syntax.rb
+      - name: Test BSP solid geometry
+        run: ruby tests/bsp_test.rb
+      - name: Test reproducible RBZ packaging
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+      - name: Build RBZ
+        run: python tools/package.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rbz-${{ matrix.os }}
+          path: dist/
+          if-no-files-found: error
