@@ -1,0 +1,8 @@
+{
+  "scope": "Local packager in a disposable copy",
+  "expected": "Exclude non-runtime Finder metadata",
+  "actual_packaged_extra_files": [
+    "lsc_super_combine/.DS_Store"
+  ],
+  "pass": false
+}

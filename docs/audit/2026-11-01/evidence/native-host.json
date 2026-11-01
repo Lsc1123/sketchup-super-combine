@@ -1,0 +1,9 @@
+{
+  "pid": 5982,
+  "sketchup": "26.0.428",
+  "ruby": "ruby 3.2.2 (2023-03-30 revision e51014f9c0) [arm64-darwin]",
+  "model_path": "<repo>/test-results/audit-empty-template.skp",
+  "entity_count": 0,
+  "bridge_loaded": false,
+  "bridge_startup_exists": false
+}

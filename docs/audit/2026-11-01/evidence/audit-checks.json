@@ -1,0 +1,108 @@
+{
+  "captured_at_utc": "2026-11-01T11:41:50.620021+00:00",
+  "baseline_commit": "2f194b4a9b1606161518608c8e12d3bd543fa839",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "python": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "baseline_pass": true,
+  "runtime_unchanged": true,
+  "runtime_sha256": {
+    "src/lsc_super_combine/THIRD_PARTY_NOTICES.txt": "a625c89847c551d25e8487ae27130fec1b678d36d287735088ac6ee4d28aaf8f",
+    "src/lsc_super_combine/bsp.rb": "77a35cb2d9bbb5ce523bed0bd68a5c5988716b48962df35c3a5009da4257f757",
+    "src/lsc_super_combine/engine.rb": "2dd2b42a889a7a6d412ee18847e29dbffec3d0d90cc8d444ded6e4689afe6f56",
+    "src/lsc_super_combine/icons/combine.png": "67ef00f4298fec175cb00d354c8065c1edeb5b141269135b7113348f4f9a0a4c",
+    "src/lsc_super_combine/main.rb": "d8fe493576009a3c99bc1902136c5ef46405b7187dc964a8908b310ebe9ba30d",
+    "src/lsc_super_combine.rb": "725a99f82776a1b14b5bce242b2f2b03aee1b74bcdd1fbf5364f553daa26a237"
+  },
+  "results": [
+    {
+      "name": "syntax",
+      "argv": [
+        "ruby",
+        "tools/check_syntax.rb"
+      ],
+      "exit_code": 0,
+      "stdout": "Syntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nSyntax OK\nRuby syntax: 12 files checked\n",
+      "stderr": ""
+    },
+    {
+      "name": "python_syntax",
+      "argv": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "py_compile",
+        "tools/run_audit.py",
+        "tests/audit_package.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "bsp_baseline",
+      "argv": [
+        "ruby",
+        "tests/bsp_test.rb"
+      ],
+      "exit_code": 0,
+      "stdout": "Run options: --seed 60934\n\n# Running:\n\n................\n\nFinished in 0.004126s, 3877.8478 runs/s, 7755.6956 assertions/s.\n\n16 runs, 32 assertions, 0 failures, 0 errors, 0 skips\n",
+      "stderr": ""
+    },
+    {
+      "name": "package_baseline",
+      "argv": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_archive_layout_integrity_and_checksum (test_package.PackageTests.test_archive_layout_integrity_and_checksum) ... ok\ntest_missing_runtime_file_is_rejected (test_package.PackageTests.test_missing_runtime_file_is_rejected) ... ok\ntest_package_is_reproducible (test_package.PackageTests.test_package_is_reproducible) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.106s\n\nOK\n"
+    },
+    {
+      "name": "package_build",
+      "argv": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "tools/package.py"
+      ],
+      "exit_code": 0,
+      "stdout": "<repo>/dist/super-combine-1.0.0.rbz: 6 files, 13969 bytes, SHA256 3ecfc93f711d57a9cf655e33e93b42ae58ba15960525b240b0e6182ff4b665e0\n",
+      "stderr": ""
+    },
+    {
+      "name": "bsp_diagnostic",
+      "argv": [
+        "ruby",
+        "tests/audit_bsp.rb"
+      ],
+      "exit_code": 1,
+      "stdout": "{\n  \"scope\": \"Pure Ruby BSP only; not SketchUp acceptance\",\n  \"ruby\": \"ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin26]\",\n  \"results\": [\n    {\n      \"name\": \"outward_disjoint_shells\",\n      \"expected_volume_in3\": 1072.0,\n      \"actual_volume_in3\": 1072.0,\n      \"pass\": true,\n      \"polygon_count\": 30,\n      \"seconds\": 0.0004269999999451102\n    },\n    {\n      \"name\": \"mixed_orientation_disjoint_shells\",\n      \"expected_volume_in3\": 1072.0,\n      \"actual_volume_in3\": 936.0,\n      \"pass\": false,\n      \"polygon_count\": 25,\n      \"seconds\": 0.00020600000016202102\n    },\n    {\n      \"name\": \"cavity_preservation\",\n      \"expected_volume_in3\": 1836.0,\n      \"actual_volume_in3\": 1836.0,\n      \"pass\": true,\n      \"polygon_count\": 16,\n      \"seconds\": 0.00029799999992974335\n    },\n    {\n      \"name\": \"cavity_island\",\n      \"expected_volume_in3\": 944.0,\n      \"actual_volume_in3\": 944.0,\n      \"pass\": true,\n      \"polygon_count\": 42,\n      \"seconds\": 0.00035299999990456854\n    },\n    {\n      \"name\": \"small_scale\",\n      \"expected_volume_in3\": 1.5e-06,\n      \"actual_volume_in3\": 1.4999999999999998e-06,\n      \"pass\": true,\n      \"polygon_count\": 10,\n      \"seconds\": 0.0001990000000660075\n    },\n    {\n      \"name\": \"large_translation\",\n      \"expected_volume_in3\": 1500.0,\n      \"actual_volume_in3\": 1500.0,\n      \"pass\": true,\n      \"polygon_count\": 10,\n      \"seconds\": 0.0001160000001618755\n    },\n    {\n      \"name\": \"overlap_below_kernel_epsilon\",\n      \"expected_volume_in3\": 1999.9995,\n      \"actual_volume_in3\": 1999.9998333333333,\n      \"pass\": false,\n      \"polygon_count\": 10,\n      \"seconds\": 0.00010499999962121365\n    }\n  ],\n  \"benchmarks\": [\n    {\n      \"disjoint_cubes\": 8,\n      \"polygons\": 48,\n      \"seconds\": 0.0024470000003020687\n    },\n    {\n      \"disjoint_cubes\": 16,\n      \"polygons\": 96,\n      \"seconds\": 0.005959999999959109\n    },\n    {\n      \"disjoint_cubes\": 32,\n      \"polygons\": 192,\n      \"seconds\": 0.026429000000007363\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ui_guard_diagnostic",
+      "argv": [
+        "ruby",
+        "tests/audit_ui_guard.rb"
+      ],
+      "exit_code": 1,
+      "stdout": "{\n  \"scope\": \"Real run method with a stubbed engine; native callbacks not tested\",\n  \"ruby\": \"ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin26]\",\n  \"expected_engine_calls\": 1,\n  \"actual\": {\n    \"engine_calls\": 2,\n    \"busy_after_rejected_call\": false\n  },\n  \"pass\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "package_diagnostic",
+      "argv": [
+        "/opt/homebrew/opt/python@3.12/bin/python3.12",
+        "tests/audit_package.py"
+      ],
+      "exit_code": 1,
+      "stdout": "{\n  \"scope\": \"Local packager in a disposable copy\",\n  \"expected\": \"Exclude non-runtime Finder metadata\",\n  \"actual_packaged_extra_files\": [\n    \"lsc_super_combine/.DS_Store\"\n  ],\n  \"pass\": false\n}\n",
+      "stderr": ""
+    }
+  ]
+}

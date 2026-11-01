@@ -1,0 +1,79 @@
+{
+  "scope": "Pure Ruby BSP only; not SketchUp acceptance",
+  "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin26]",
+  "results": [
+    {
+      "name": "outward_disjoint_shells",
+      "expected_volume_in3": 1072.0,
+      "actual_volume_in3": 1072.0,
+      "pass": true,
+      "polygon_count": 30,
+      "seconds": 0.0004269999999451102
+    },
+    {
+      "name": "mixed_orientation_disjoint_shells",
+      "expected_volume_in3": 1072.0,
+      "actual_volume_in3": 936.0,
+      "pass": false,
+      "polygon_count": 25,
+      "seconds": 0.00020600000016202102
+    },
+    {
+      "name": "cavity_preservation",
+      "expected_volume_in3": 1836.0,
+      "actual_volume_in3": 1836.0,
+      "pass": true,
+      "polygon_count": 16,
+      "seconds": 0.00029799999992974335
+    },
+    {
+      "name": "cavity_island",
+      "expected_volume_in3": 944.0,
+      "actual_volume_in3": 944.0,
+      "pass": true,
+      "polygon_count": 42,
+      "seconds": 0.00035299999990456854
+    },
+    {
+      "name": "small_scale",
+      "expected_volume_in3": 1.5e-06,
+      "actual_volume_in3": 1.4999999999999998e-06,
+      "pass": true,
+      "polygon_count": 10,
+      "seconds": 0.0001990000000660075
+    },
+    {
+      "name": "large_translation",
+      "expected_volume_in3": 1500.0,
+      "actual_volume_in3": 1500.0,
+      "pass": true,
+      "polygon_count": 10,
+      "seconds": 0.0001160000001618755
+    },
+    {
+      "name": "overlap_below_kernel_epsilon",
+      "expected_volume_in3": 1999.9995,
+      "actual_volume_in3": 1999.9998333333333,
+      "pass": false,
+      "polygon_count": 10,
+      "seconds": 0.00010499999962121365
+    }
+  ],
+  "benchmarks": [
+    {
+      "disjoint_cubes": 8,
+      "polygons": 48,
+      "seconds": 0.0024470000003020687
+    },
+    {
+      "disjoint_cubes": 16,
+      "polygons": 96,
+      "seconds": 0.005959999999959109
+    },
+    {
+      "disjoint_cubes": 32,
+      "polygons": 192,
+      "seconds": 0.026429000000007363
+    }
+  ]
+}

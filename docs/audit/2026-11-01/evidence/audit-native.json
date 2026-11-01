@@ -1,0 +1,373 @@
+{
+  "scope": "SketchUp native engine",
+  "sketchup": "26.0.428",
+  "ruby": "ruby 3.2.2 (2023-03-30 revision e51014f9c0) [arm64-darwin]",
+  "platform": "arm64-darwin",
+  "pid": 5982,
+  "engine_sha256": "2dd2b42a889a7a6d412ee18847e29dbffec3d0d90cc8d444ded6e4689afe6f56",
+  "bsp_sha256": "77a35cb2d9bbb5ce523bed0bd68a5c5988716b48962df35c3a5009da4257f757",
+  "results": [
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1072,
+      "actual_volume_in3": 1072.0,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 3,
+      "actual_shells": 3,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "mesh_points": 45,
+        "mesh_polygons": 56,
+        "fill": true,
+        "before_faces": 56,
+        "cavity_kernel": true,
+        "volume_m3": 0.017566932607999998,
+        "faces": 18
+      },
+      "source_ids": [
+        5092,
+        5156
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "outward_disjoint_shells",
+      "seconds": 0.010453000000325119
+    },
+    {
+      "pass": false,
+      "outcome": "success",
+      "expected_volume_in3": 1072,
+      "actual_volume_in3": 936.0,
+      "absolute_volume_error_in3": 136.0,
+      "expected_shells": 3,
+      "actual_shells": 2,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "mesh_points": 38,
+        "mesh_polygons": 46,
+        "fill": true,
+        "before_faces": 46,
+        "cavity_kernel": true,
+        "volume_m3": 0.015338291903999999,
+        "faces": 12
+      },
+      "source_ids": [
+        5553,
+        5617
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "input_passed_solid_check": true,
+      "input_reported_volume_in3": 936.0,
+      "name": "mixed_orientation_disjoint_shells",
+      "seconds": 0.007773999999699299
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1500,
+      "actual_volume_in3": 1500.0,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 1,
+      "actual_shells": 1,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "volume_m3": 0.024580596,
+        "faces": 6
+      },
+      "source_ids": [
+        5956,
+        5988
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "reversed_single_shell_native_union",
+      "seconds": 0.0030499999998028215
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1836,
+      "actual_volume_in3": 1836.0,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 2,
+      "actual_shells": 2,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "mesh_points": 27,
+        "mesh_polygons": 34,
+        "fill": true,
+        "before_faces": 34,
+        "cavity_kernel": true,
+        "volume_m3": 0.030086649503999998,
+        "faces": 12
+      },
+      "source_ids": [
+        6253,
+        6317
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "sealed_cavity",
+      "seconds": 0.007219999999961146
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 2500,
+      "actual_volume_in3": 2500.0,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 1,
+      "actual_shells": 1,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "volume_m3": 0.040967659999999996,
+        "faces": 6
+      },
+      "source_ids": [
+        6610,
+        6644
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "mirrored_nonuniform_nested",
+      "seconds": 0.00288700000010067
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1.5e-06,
+      "actual_volume_in3": 1.4999999999999998e-06,
+      "absolute_volume_error_in3": 2.117582368135751e-22,
+      "expected_shells": 1,
+      "actual_shells": 1,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "volume_m3": 2.4580595999999996e-11,
+        "faces": 6
+      },
+      "source_ids": [
+        6909,
+        6941
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "small_scale",
+      "seconds": 0.0027039999999942665
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1999.9995,
+      "actual_volume_in3": 1999.9995,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 1,
+      "actual_shells": 1,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "volume_m3": 0.032774119806467994,
+        "faces": 6
+      },
+      "source_ids": [
+        7206,
+        7238
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "overlap_below_kernel_epsilon_native",
+      "seconds": 0.0021619999997710693
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1935.9995,
+      "actual_volume_in3": 1935.9995,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 2,
+      "actual_shells": 2,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "mesh_points": 20,
+        "mesh_polygons": 32,
+        "fill": true,
+        "before_faces": 32,
+        "cavity_kernel": true,
+        "volume_m3": 0.031725347710468,
+        "faces": 12
+      },
+      "source_ids": [
+        7415,
+        7479
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "overlap_below_kernel_epsilon_cavity",
+      "seconds": 0.008123000000068714
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1500,
+      "actual_volume_in3": 1500.0,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 1,
+      "actual_shells": 1,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "volume_m3": 0.024580596,
+        "faces": 6
+      },
+      "source_ids": [
+        7754,
+        7786
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "large_translation_native",
+      "seconds": 0.00265899999976682
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1836,
+      "actual_volume_in3": 1836.0,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 2,
+      "actual_shells": 2,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "mesh_points": 24,
+        "mesh_polygons": 32,
+        "fill": true,
+        "before_faces": 32,
+        "cavity_kernel": true,
+        "volume_m3": 0.030086649503999998,
+        "faces": 12
+      },
+      "source_ids": [
+        8051,
+        8115
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "name": "large_translation_cavity",
+      "seconds": 0.0062499999999090505
+    },
+    {
+      "pass": true,
+      "outcome": "rejected",
+      "error": "无法安全修成封闭实体：6 条开口边、0 条多面共边。请检查缺失面或交叉面；原对象未改变。",
+      "sources_intact": true,
+      "selection_restored": true,
+      "expected_volume_in3": 0,
+      "name": "unrepairable_rollback",
+      "seconds": 0.0017410000000381842
+    },
+    {
+      "pass": true,
+      "outcome": "success",
+      "expected_volume_in3": 1500,
+      "actual_volume_in3": 1500.0,
+      "absolute_volume_error_in3": 0.0,
+      "expected_shells": 1,
+      "actual_shells": 1,
+      "solid": true,
+      "stats": {
+        "inputs": 2,
+        "solids": 2,
+        "repaired_faces": 0,
+        "internal_faces": 0,
+        "stray_edges": 0,
+        "volume_m3": 0.024580596,
+        "faces": 6
+      },
+      "source_ids": [
+        8548,
+        8580
+      ],
+      "sources_replaced": true,
+      "result_selected": true,
+      "shared_definition_changed": true,
+      "interpretation": "Standard component edit propagation; product/documentation decision",
+      "outside_instance_valid": true,
+      "name": "shared_parent_component_edit",
+      "seconds": 0.002997999999934109
+    },
+    {
+      "name": "top_level_one_undo",
+      "pass": true,
+      "expected_ids": [
+        8847,
+        8879
+      ],
+      "actual_ids": [
+        8847,
+        8879
+      ]
+    },
+    {
+      "name": "nested_one_undo",
+      "pass": true,
+      "expected_ids": [
+        9146,
+        9178
+      ],
+      "actual_ids": [
+        9146,
+        9178
+      ]
+    }
+  ],
+  "complete": true
+}

@@ -123,18 +123,61 @@ module LSC
         end
         result
       end
+
+      def signed_volume(polygons)
+        origin=polygons.first.vertices.first
+        polygons.sum do |polygon|
+          a=polygon.vertices.first-origin
+          (1...polygon.vertices.length-1).sum do |i|
+            a.dot((polygon.vertices[i]-origin).cross(polygon.vertices[i+1]-origin))/6.0
+          end
+        end
+      end
+
+      # A cavity may point inward, but spatially independent outer shells must
+      # agree. Bounds containment is used conservatively to identify outer
+      # candidates; this is not a general self-intersection/containment solver.
+      def outer_direction(shell_polygons)
+        boxes=shell_polygons.map do |polygons|
+          points=polygons.flat_map(&:vertices)
+          [3.times.map { |axis| points.map { |p| p.to_a[axis] }.min },
+           3.times.map { |axis| points.map { |p| p.to_a[axis] }.max }]
+        end
+        roots=boxes.each_index.reject do |i|
+          boxes.each_index.any? do |j|
+            next false if i==j
+            contained=3.times.all? { |axis| boxes[j][0][axis]<=boxes[i][0][axis]+EPSILON && boxes[j][1][axis]>=boxes[i][1][axis]-EPSILON }
+            larger=3.times.any? { |axis| boxes[j][0][axis]<boxes[i][0][axis]-EPSILON || boxes[j][1][axis]>boxes[i][1][axis]+EPSILON }
+            contained && larger
+          end
+        end
+        directions=roots.map do |i|
+          volume=signed_volume(shell_polygons[i])
+          raise CombineError, '外壳体积无法可靠判定，请检查退化面或自相交；原对象已保留。' unless volume.finite? && !volume.zero?
+          volume<0 ? -1 : 1
+        end.uniq
+        unless directions.length==1
+          raise CombineError, '独立外壳法线方向不一致，请统一法线或分开处理；原对象已保留。'
+        end
+        directions.first
+      end
+
       def mesh(group)
         transformation=group.transformation
-        polygons=group.entities.grep(Sketchup::Face).flat_map do |face|
+        faces=group.entities.grep(Sketchup::Face)
+        by_face={}
+        faces.each do |face|
           mesh=face.mesh(0)
-          mesh.polygons.map do |indices|
+          by_face[face]=mesh.polygons.map do |indices|
             points=indices.map { |index| mesh.point_at(index.abs).transform(transformation) }
             Polygon.new(points,[face,transformation])
           end
         end
+        components=shells(group).map { |component| component.flat_map { |face| by_face.fetch(face) } }
+        direction=outer_direction(components)
+        polygons=faces.flat_map { |face| by_face.fetch(face) }
         # A completely reversed solid is common in imported SketchUp geometry.
-        signed=polygons.sum { |p| BSP.dot(Geom::Vector3d.new(p.vertices[0].to_a), Geom::Vector3d.new(p.vertices[1].to_a).cross(Geom::Vector3d.new(p.vertices[2].to_a)))/6.0 }
-        polygons.each(&:flip) if signed<0
+        polygons.each(&:flip) if direction<0
         polygons
       end
       def apply_material(face, polygon)
