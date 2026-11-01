@@ -1,0 +1,16 @@
+{
+  "pid": 11877,
+  "sketchup": "26.0.428",
+  "expected_volume_in3": 1072,
+  "input_passed_solid_check": true,
+  "third_cube_hit_before": true,
+  "source_ids": [
+    10828,
+    10892
+  ],
+  "outcome": "rejected",
+  "error": "独立外壳法线方向不一致，请统一法线或分开处理；原对象已保留。",
+  "sources_intact": true,
+  "third_cube_hit_after": true,
+  "complete": true
+}

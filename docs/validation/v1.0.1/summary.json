@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "pass": true,
+  "pid": 11877,
+  "baseline_count": 17,
+  "audit_count": 17,
+  "entrypoint_pass": true,
+  "mixed_shell_safely_rejected": true,
+  "geometry_left_in_test_model": 0
+}

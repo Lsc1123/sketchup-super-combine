@@ -1,0 +1,11 @@
+{
+  "pid": 11877,
+  "sketchup": "26.0.428",
+  "ruby": "ruby 3.2.2 (2023-03-30 revision e51014f9c0) [arm64-darwin]",
+  "version": "1.0.1",
+  "bridge_loaded": false,
+  "executed_package": true,
+  "rbz_sha256": "8c49e898a70d2afd909d74d890426c2760ad803ff27d01c37d9813158f0a3810",
+  "engine_sha256": "b7523fe23996bba258c18a12c1be461f8be4463c9c8066e663080029d71acd35",
+  "model_path": "<repo>/test-results/audit-empty-template.skp"
+}

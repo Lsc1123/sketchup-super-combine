@@ -1,0 +1,17 @@
+{
+  "runtime_commit": "c41ef03b1bb2d2d45e2a221342114648335f74e5",
+  "version": "1.0.1",
+  "archive": "super-combine-1.0.1.rbz",
+  "sha256": "8c49e898a70d2afd909d74d890426c2760ad803ff27d01c37d9813158f0a3810",
+  "bytes": 16017,
+  "contents_sha256": {
+    "lsc_super_combine/LICENSE.txt": "d2c54ecfac7b6f7d8d5820af91ab3dc309676b322b72d4d4dd3dbe9789a90530",
+    "lsc_super_combine/THIRD_PARTY_NOTICES.txt": "a625c89847c551d25e8487ae27130fec1b678d36d287735088ac6ee4d28aaf8f",
+    "lsc_super_combine/bsp.rb": "47d1b86fd4868dde5c9d3b03c10c8e6f9a30aa0f93c203613c23879b40e7d0f6",
+    "lsc_super_combine/engine.rb": "b7523fe23996bba258c18a12c1be461f8be4463c9c8066e663080029d71acd35",
+    "lsc_super_combine/icons/combine.png": "67ef00f4298fec175cb00d354c8065c1edeb5b141269135b7113348f4f9a0a4c",
+    "lsc_super_combine/main.rb": "b204fc620ae3671f72c836f4b81f891ae0c9357a9883a9e2e835c910e0c6f001",
+    "lsc_super_combine/version.rb": "b6d2e4079cdd2f621e509a427163221195869d9f86b485e8ef2ceea17730f3a5",
+    "lsc_super_combine.rb": "ff9708d64267ef3aaff22733c6017bf0b95711b82e7cff14063c56196aea0d18"
+  }
+}
