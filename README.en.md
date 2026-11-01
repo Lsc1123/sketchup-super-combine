@@ -20,7 +20,14 @@ The bounds check is a necessary check, not a general proof that arbitrary damage
 
 ## Validation and development
 
-Target: SketchUp 2026. Native verification is performed on macOS / SketchUp 26.0.428. Windows CI tests Ruby geometry and packaging, but **Windows SketchUp has not been tested on a real host**. No model data is sent over the network and no other extension is required.
+Verified environments:
+
+| Operating system | SketchUp version | Verification |
+| --- | --- | --- |
+| macOS arm64 | 2026 (26.0.428) | Repository native test suite passed |
+| Windows 11 | 2025 | User-tested; reported working normally on 2026-11-01 |
+
+The Windows result is user-reported and is separate from the automated macOS native suite. macOS / Windows CI covers Ruby geometry, guards, and packaging. No model data is sent over the network and no other extension is required.
 
 Use Ruby 3.2 and Python 3.12:
 

@@ -35,7 +35,14 @@
 
 ## 兼容与验证
 
-目标版本为 **SketchUp 2026**。macOS / SketchUp **26.0.428** 已进行原生验证，记录见 [1.0.1 发布验证](docs/validation/v1.0.1/README.md)。Windows CI 已覆盖纯 Ruby 内核、入口保护、范围校验和打包；**Windows SketchUp 尚未实机验证**，其他 SketchUp 版本不作实测承诺。
+已验证的运行环境：
+
+| 系统 | SketchUp 版本 | 验证方式与结果 |
+| --- | --- | --- |
+| macOS arm64 | 2026（26.0.428） | 仓库原生测试通过 |
+| Windows 11 | 2025 | 用户实测反馈：可以正常运行（2026-11-01） |
+
+详细记录见 [1.0.1 发布验证](docs/validation/v1.0.1/README.md)。macOS / Windows CI 覆盖纯 Ruby 内核、入口保护、范围校验和打包；Windows 11 / SketchUp 2025 的记录来自用户实测反馈，不计入 macOS 原生自动化测试数量。
 
 CI 不包含 SketchUp 宿主或 GUI。历史 [1.0.0 首轮审查](docs/audit/2026-11-01/README.md)保留原缺陷前后模型及证据；不能把历史失败结果当作当前版本状态。
 
