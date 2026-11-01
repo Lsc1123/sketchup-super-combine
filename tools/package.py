@@ -48,7 +48,7 @@ def build(root=ROOT):
         if archive.testzip() is not None:
             raise ValueError('Corrupt RBZ archive')
     sha = hashlib.sha256(path.read_bytes()).hexdigest()
-    (dist / 'SHA256SUMS.txt').write_text(f'{sha}  {path.name}\n', encoding='utf-8')
+    (dist / 'SHA256SUMS.txt').write_bytes(f'{sha}  {path.name}\n'.encode('ascii'))
     print(f'{path}: {len(files)} files, {path.stat().st_size} bytes, SHA256 {sha}')
     return path
 

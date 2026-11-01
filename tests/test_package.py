@@ -51,6 +51,8 @@ class PackageTests(unittest.TestCase):
             self.assertTrue(z.read('lsc_super_combine/icons/combine.png').startswith(b'\x89PNG\r\n\x1a\n'))
         expected_checksum = f'{hashlib.sha256(archive.read_bytes()).hexdigest()}  {archive.name}'
         self.assertEqual(expected_checksum, (self.root / 'dist/SHA256SUMS.txt').read_text().strip())
+        self.assertEqual((expected_checksum+'\n').encode('ascii'),
+                         (self.root / 'dist/SHA256SUMS.txt').read_bytes())
 
     def test_package_is_reproducible(self):
         self.assertEqual(0, self.build().returncode)

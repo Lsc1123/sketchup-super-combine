@@ -31,4 +31,6 @@ python tools/package.py
 
 ## 维护者发布
 
-更新版本文件、CHANGELOG、`docs/releases/vX.Y.Z.md`，完成原生验证并合入。为同一提交推送对应 `vX.Y.Z` tag。CI 在两平台测试并生成字节一致的 RBZ，确认 tag 与版本一致后发布 Release、安装包与 SHA256。不要重写已发布 tag 或替换旧版本的安装包。
+更新版本文件、CHANGELOG、`docs/releases/vX.Y.Z.md`，完成原生验证并合入。为同一提交推送对应 `vX.Y.Z` tag。CI 在两平台测试并生成字节一致的 RBZ，确认 tag 与版本一致后发布 Release、安装包与 SHA256。校验和文本统一使用 LF。不要重写已发布 tag 或替换旧版本的安装包。
+
+如果发布流程本身失败且 Release 尚未创建，可从 main 手动运行此工作流，并传入已存在的 `release_tag`（如 `v1.0.1`）；它仍检出该 tag、重新验证并比较两平台 RBZ，不会移动 tag。已有 Release 不会被覆盖。
