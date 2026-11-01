@@ -1,0 +1,10 @@
+{
+  "user_authorized": true,
+  "startup_paused": true,
+  "paused_sha256": "bc90377c1b329cc1eedbaab6dbd446fef19dee7908b680fb92e7a825864494c5",
+  "scope": "New-process autoload only; existing instance and bridge remain running",
+  "startup_restored": true,
+  "restored_sha256": "bc90377c1b329cc1eedbaab6dbd446fef19dee7908b680fb92e7a825864494c5",
+  "paused_copy_removed": true,
+  "coordination": "Authorized by the owner; internal chat identifiers omitted from public record."
+}

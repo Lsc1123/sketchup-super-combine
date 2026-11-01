@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-01",
+  "host": "macOS arm64 / SketchUp 26.0.428 / Ruby 3.2.2",
+  "geometry_suite_executed": true,
+  "baseline_native_rerun": true,
+  "baseline_native": {
+    "total": 17,
+    "passed": 17
+  },
+  "new_native": {
+    "total": 14,
+    "passed": 13,
+    "failed": [
+      "mixed_orientation_disjoint_shells"
+    ],
+    "complete": true
+  },
+  "new_undo_tests_executed": true,
+  "top_level_undo_passed": true,
+  "nested_undo_passed": true,
+  "defect_result_undo_passed": true,
+  "ui_suite_executed": false,
+  "ui_note": "No actual menu/toolbar click test was performed in this run.",
+  "windows_sketchup_native": "not executed",
+  "previous_blocker": "Earlier isolation launch was rejected; resolved after explicit user approval and coordination to temporarily pause the shared startup bridge.",
+  "isolation": {
+    "bridge_loaded_in_test_host": false,
+    "host_pid": 5982,
+    "case_capture_pid": 6192,
+    "models": "Only the generated empty scratch model and synthetic cubes",
+    "shared_startup_restored_byte_for_byte": true,
+    "test_processes_closed": true
+  },
+  "case_files": {
+    "mixed-shell-before.skp": {
+      "bytes": 6409,
+      "sha256": "e282f4f2411fccf6c98a39b33860002e99ddbeebc8ca033c75335e59f00d68ef"
+    },
+    "mixed-shell-after.skp": {
+      "bytes": 6057,
+      "sha256": "6044c71d52710e9d6d246a4d6f72b6f2ccd583f4ca1b0a0585a025941efa5c66"
+    }
+  },
+  "historical_native_evidence": "../../../validation/README.md"
+}

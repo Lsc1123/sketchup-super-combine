@@ -1,0 +1,11 @@
+{
+  "scope": "Only a brief new-process startup window; existing models and connections remain running",
+  "files": {
+    "amw_validation_bootstrap.rb": "bc90377c1b329cc1eedbaab6dbd446fef19dee7908b680fb92e7a825864494c5",
+    "lsc_super_combine.rb": "725a99f82776a1b14b5bce242b2f2b03aee1b74bcdd1fbf5364f553daa26a237"
+  },
+  "test_pid": 11877,
+  "host_isolated": true,
+  "startup_entries_restored": true,
+  "test_process_closed": true
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "Actual packaged main.run in native SketchUp; no physical GUI click",
+  "pass": true,
+  "serial_runs": [
+    true,
+    true
+  ]
+}

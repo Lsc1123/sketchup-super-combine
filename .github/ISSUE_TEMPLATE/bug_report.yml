@@ -1,0 +1,20 @@
+name: 缺陷报告 / Bug report
+description: 提供可复现的操作和最小模型
+body:
+  - type: input
+    id: versions
+    attributes:
+      label: SketchUp、插件及操作系统版本
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤、预期结果与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: model
+    attributes:
+      label: 最小复现模型与错误信息
+      description: 尽量使用合成几何，并说明空腔、反向面、嵌套、缩放和撤销行为。

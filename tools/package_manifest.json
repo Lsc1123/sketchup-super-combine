@@ -1,0 +1,12 @@
+{
+  "runtime_files": [
+    "lsc_super_combine.rb",
+    "lsc_super_combine/main.rb",
+    "lsc_super_combine/engine.rb",
+    "lsc_super_combine/bsp.rb",
+    "lsc_super_combine/version.rb",
+    "lsc_super_combine/icons/combine.png",
+    "lsc_super_combine/THIRD_PARTY_NOTICES.txt"
+  ],
+  "project_license_in_archive": "lsc_super_combine/LICENSE.txt"
+}

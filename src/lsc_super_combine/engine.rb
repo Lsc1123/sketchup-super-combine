@@ -1,5 +1,6 @@
 # encoding: UTF-8
 require File.join(__dir__, 'bsp')
+require File.join(__dir__, 'version')
 module LSC
   module SuperCombine
     class CombineError < StandardError; end
@@ -147,6 +148,26 @@ module LSC
         result
       end
 
+      # A finite union must preserve its input extents. Capture these before
+      # native union consumes operands; topology checks alone cannot detect loss.
+      def combined_bounds(groups)
+        boxes = groups.map(&:bounds)
+        [3.times.map { |axis| boxes.map { |b| b.min[axis].to_f }.min },
+         3.times.map { |axis| boxes.map { |b| b.max[axis].to_f }.max }]
+      end
+
+      def verify_bounds!(group, expected)
+        actual = [group.bounds.min.to_a, group.bounds.max.to_a]
+        matches = 2.times.all? do |side|
+          3.times.all? do |axis|
+            value = actual[side][axis].to_f
+            value.finite? && (value - expected[side][axis]).abs <= BSP::EPSILON
+          end
+        end
+        return if matches
+        raise CombineError, '组合结果范围与输入不一致，可能丢失几何。请统一独立壳体法线或分批处理；原对象已保留。'
+      end
+
       def combine(model = Sketchup.active_model, selected = nil)
         sources = (selected || model.selection.to_a).select(&:valid?)
         raise CombineError, '请先选中要组合的群组或组件。' if sources.empty?
@@ -192,20 +213,23 @@ module LSC
           end
           raise CombineError, '没有可形成实体的体积，原对象未改变。' if solids.empty?
           stats[:solids] = solids.length
+          expected_bounds = combined_bounds(solids)
           result = if solids.length > 1 && solids.any? { |g| BSP.shells(g).length > 1 }
                      BSP.combine(solids, work.entities, stats)
                    else
                      union(solids, stats)
                    end
           raise CombineError, '结果未通过实体检查，原对象未改变。' unless solid?(result)
+          verify_bounds!(result, expected_bounds)
           # Pull the verified result out of the staging group with a fresh unique definition.
           final = model.active_entities.add_group
           final.entities.add_instance(definition(result), result.transformation).explode
           final.name = '超级组合'
           final.layer = sources.first.layer
-          final.set_attribute('LSC_SuperCombine', 'version', '1.0.0')
+          final.set_attribute('LSC_SuperCombine', 'version', VERSION)
           final.set_attribute('LSC_SuperCombine', 'source_count', sources.length)
           raise CombineError, '输出实体检查失败，原对象未改变。' unless solid?(final)
+          verify_bounds!(final, expected_bounds)
           work.erase!
           sources.each(&:erase!)
           model.selection.clear

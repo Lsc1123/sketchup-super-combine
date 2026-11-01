@@ -1,0 +1,43 @@
+{
+  "pid": 6192,
+  "sketchup": "26.0.428",
+  "expected_volume_in3": 1072,
+  "input_passed_solid_check": true,
+  "third_cube_hit_before": true,
+  "source_ids": [
+    18,
+    82
+  ],
+  "actual_volume_in3": 936.0,
+  "output_shells": 2,
+  "result_solid": true,
+  "result_bounds_min": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "result_bounds_max": [
+    34.0,
+    10.0,
+    10.0
+  ],
+  "sources_deleted": true,
+  "third_cube_hit_after": false,
+  "stats": {
+    "inputs": 2,
+    "solids": 2,
+    "repaired_faces": 0,
+    "internal_faces": 0,
+    "stray_edges": 0,
+    "mesh_points": 38,
+    "mesh_polygons": 46,
+    "fill": true,
+    "before_faces": 46,
+    "cavity_kernel": true,
+    "volume_m3": 0.015338291903999999,
+    "faces": 12
+  },
+  "one_undo_restores_source_ids": true,
+  "third_cube_hit_after_undo": true,
+  "complete": true
+}

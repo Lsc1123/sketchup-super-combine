@@ -1,9 +1,10 @@
 """Install the built, verified RBZ into SketchUp 2026 for the current Mac user."""
 from pathlib import Path
+from package import version
 import zipfile
 root=Path(__file__).resolve().parents[1]
 dest=Path.home()/'Library/Application Support/SketchUp 2026/SketchUp/Plugins'
-archive=root/'dist/super-combine-1.0.0.rbz'
+archive=root/'dist'/f'super-combine-{version(root)}.rbz'
 with zipfile.ZipFile(archive) as z:
     assert z.testzip() is None
     for name in z.namelist():

@@ -1,0 +1,10 @@
+{
+  "scope": "Real run method with a stubbed engine; native callbacks not tested",
+  "ruby": "ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin26]",
+  "expected_engine_calls": 1,
+  "actual": {
+    "engine_calls": 2,
+    "busy_after_rejected_call": false
+  },
+  "pass": false
+}

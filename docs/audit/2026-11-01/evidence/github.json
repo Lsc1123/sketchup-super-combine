@@ -1,0 +1,31 @@
+{
+  "captured_date": "2026-11-01",
+  "repository": {
+    "full_name": "Lsc1123/sketchup-super-combine",
+    "private": true,
+    "default_branch": "main",
+    "license": null,
+    "open_issues": 0,
+    "updated_at": "2026-10-12T16:57:10Z"
+  },
+  "baseline_commit": "2f194b4a9b1606161518608c8e12d3bd543fa839",
+  "historical_ci": [
+    {
+      "id": 38281183110,
+      "sha": "2f194b4a9b1606161518608c8e12d3bd543fa839",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Lsc1123/sketchup-super-combine/actions/runs/38281183110",
+      "created_at": "2026-10-12T16:59:15Z"
+    },
+    {
+      "id": 38280949130,
+      "sha": "2f194b4a9b1606161518608c8e12d3bd543fa839",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Lsc1123/sketchup-super-combine/actions/runs/38280949130",
+      "created_at": "2026-10-12T16:57:09Z"
+    }
+  ],
+  "note": "These CI runs precede the audit additions; no new changes were pushed."
+}

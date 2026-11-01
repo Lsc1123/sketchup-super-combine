@@ -100,4 +100,20 @@ class BSPTest < Minitest::Test
   def test_complexity_guard
     assert_raises(LSC::SuperCombine::CombineError) { BSP::Node.new([cube.first]*50_001) }
   end
+  def test_mixed_outer_shell_directions_are_rejected
+    reversed=cube(30,0,0,4).each(&:flip)
+    assert_raises(LSC::SuperCombine::CombineError) { BSP.outer_direction([cube,reversed]) }
+  end
+  def test_wholly_reversed_disjoint_shells_are_recognized
+    assert_equal(-1,BSP.outer_direction([cube.each(&:flip),cube(30).each(&:flip)]))
+  end
+  def test_cavity_and_island_directions_are_preserved
+    assert_equal 1,BSP.outer_direction([cube,cube(3,3,3,4).each(&:flip),cube(4,4,4,2)])
+  end
+  def test_wholly_reversed_cavity_is_recognized
+    assert_equal(-1,BSP.outer_direction([cube.each(&:flip),cube(3,3,3,4)]))
+  end
+  def test_shell_volume_is_stable_far_from_origin
+    assert_in_delta 1000,BSP.signed_volume(cube(1e8,1e8,1e8)),1e-6
+  end
 end

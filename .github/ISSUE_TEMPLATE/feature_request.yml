@@ -1,0 +1,9 @@
+name: 改进建议 / Feature request
+description: 描述需要解决的建模场景
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 当前遇到的场景和希望得到的结果
+    validations:
+      required: true
